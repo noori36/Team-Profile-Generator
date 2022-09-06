@@ -64,6 +64,5 @@ SO THAT I have quick access to their emails and GitHub profiles
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
     
