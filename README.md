@@ -30,15 +30,15 @@ SO THAT I have quick access to their emails and GitHub profiles
 
 
   ## Usage
-  Create a professional readme.md file easily and quickly.
+  Create a team profile.
   
   - Screenshot
-  <br><img src="./assets/images/screenshot.png" alt="screenshot of generated Readme" width="350"/>
+  <br><img src="./assets/images/screenshot1.png" alt="screenshot of generated HTML" width="350"/>
 
   
   - <a href="https://drive.google.com/file/d/1frPcKCF6me5XFSVb4NPXX92wk84tJtm-/view?usp=sharing"> Walkthrough Video</a>
     
-  - <a href="./ReadmeGenerator.md">Sample README.md File Generated</a>
+  - <a href="./dist/index.html">Sample Generated HTML</a>
   -   [The URL of the GitHub Repository.](https://github.com/noori36/Professional-README-Generator)
  
 
