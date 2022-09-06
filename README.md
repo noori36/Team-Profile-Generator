@@ -15,7 +15,7 @@ SO THAT I have quick access to their emails and GitHub profiles
   1. [Installation](#installation)
   1. [Usage](#usgae)
   3. [Contributing](#contributing)
-  4. [Testing] (#testing)
+  4. [Testing](#testing)
   4. [Authors](#authors%20and%20acknowledgment)
   5. [License](#license)
 
