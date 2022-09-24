@@ -33,7 +33,7 @@ SO THAT I have quick access to their emails and GitHub profiles
   Create a team profile to access the team information under one webpage.
   
   - Screenshot
-  <br><img src="./assets/images/screenshot1.png" alt="screenshot of generated HTML" width="350"/>
+  <br><img src="./assets/images/htmlscreenshot.png" alt="screenshot of generated HTML" width="350"/>
 
   
   - <a href="https://drive.google.com/file/d/1S5tw95BAcPKRh_DlWCocOfnN_0IfLKk6/view?usp=sharing"> Walkthrough Video</a>
