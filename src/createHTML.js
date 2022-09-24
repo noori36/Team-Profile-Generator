@@ -12,8 +12,8 @@ const createManager = (manager) => {
             </div>
             <div class="card-body">
                 <p class="id">ID: ${manager.id}</p>
-                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
                 <p class="office">Office Number: ${manager.officeNumber}</p>
+                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
             </div>
         </div>
     </div>
@@ -35,8 +35,8 @@ const createEngineer = (engineer) => {
             </div>
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
-                <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
                 <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+                <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
             </div>
         </div>
     </div>
@@ -57,8 +57,8 @@ const createIntern = (intern) => {
             </div>
             <div class="card-body">
                 <p class="id">ID: ${intern.id}</p>
-                <p class="email">Email:<a href="mailto:${intern.email}">${intern.email}</a></p>
                 <p class="school">School: ${intern.school}</p>
+                <p class="email">Email:<a href="mailto:${intern.email}">${intern.email}</a></p>
             </div>
     </div>
     
@@ -78,29 +78,24 @@ createHTML = (data) => {
         const employee = data[i];
         const role = employee.getRole();
 
-
         if (role === 'Manager') {
             const manager = createManager(employee);
-
             displayArr.push(manager);
         }
 
         if (role === 'Engineer') {
             const engineer = createEngineer(employee);
-
             displayArr.push(engineer);
         }
  
         if (role === 'Intern') {
             const intern = createIntern(employee);
-
             displayArr.push(intern);
         }
 
     }
 
     const employeeDisplays = displayArr.join('')
-
     const createTeam = createTeamPage(employeeDisplays);
     return createTeam;
 
@@ -122,7 +117,7 @@ const createTeamPage = (employeeDisplays) => {
   </head>
   <body>
       <header>
-          <nav class="navbar" id="navbar">
+          <nav class="header" id="navbar">
               <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">My Team</span>
           </nav>
       </header>

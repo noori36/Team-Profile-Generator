@@ -1,4 +1,5 @@
 const createHTML = require('./src/createHTML');
+const writeFile = require('./src/writeFile');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern'); 
@@ -8,71 +9,6 @@ const inquirer = require('inquirer');
 
 const team = []; 
 
-// manager prompts 
-const addManager = () => {
-    return inquirer.prompt ([
-        {
-            type: 'input',
-            name: 'name',
-            message: 'Who is the manager of this team?', 
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log ("You need to provide the manager's name:");
-                    return false; 
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'id',
-            message: "Enter the manager's ID.",
-            validate: idInput => {
-                if  (idInput) {
-                    return true;
-                } else {
-                    console.log ("You need to provide the manager's ID:")
-                    return false; 
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: "Enter the manager's email.",
-            validate: emailInput => {
-                if (emailInput) {
-                    return true;
-                } else {
-                    console.log ('You need to provide an email:')
-                    return false; 
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'officeNumber',
-            message: "Enter the manager's office number:",
-            validate: numInput => {
-                if  (numInput) {
-                    return true;
-                } else {
-                    console.log ('You need to provide an office number:')
-                    return false; 
-                }
-            }
-        }
-    ])
-    .then(managerInput => {
-        const  { name, id, email, officeNumber } = managerInput; 
-        const manager = new Manager (name, id, email, officeNumber);
-
-        team.push(manager); 
-        console.log(manager); 
-    })
-};
-
 const addEmployee = () => {
 
     return inquirer.prompt ([
@@ -80,7 +16,7 @@ const addEmployee = () => {
             type: 'list',
             name: 'role',
             message: "What's employee's role",
-            choices: ['Engineer', 'Intern']
+            choices: ['Manager', 'Engineer', 'Intern']
         },
         {
             type: 'input',
@@ -123,6 +59,20 @@ const addEmployee = () => {
         },
         {
             type: 'input',
+            name: 'officeNumber',
+            message: "Enter the manager's office number:",
+            when: (input) => input.role === "Manager",
+            validate: numInput => {
+                if  (numInput) {
+                    return true;
+                } else {
+                    console.log ('You need to provide an office number:')
+                    return false; 
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'github',
             message: "Enter the employee's github username.",
             when: (input) => input.role === "Engineer",
@@ -158,10 +108,14 @@ const addEmployee = () => {
     ])
     .then(employeeData => {
 
-        let { name, id, email, role, github, school, confirmAddEmployee } = employeeData; 
+        let { name, id, email, role, officeNumber, github, school, confirmAddEmployee } = employeeData; 
         let employee; 
 
-        if (role === "Engineer") {
+        if (role === "Manager") {
+            employee = new Manager (name, id, email, officeNumber);
+            console.log(employee);
+
+        } else if (role === "Engineer") {
             employee = new Engineer (name, id, email, github);
             console.log(employee);
 
@@ -181,27 +135,13 @@ const addEmployee = () => {
 
 };
 
-
-// function to create HTML
-const writeFile = data => {
-    fs.writeFile('./dist/index.html', data, err => {
-        if (err) {
-            console.log(err);
-            return;
-        } else {
-            console.log("Your team profile has been created. check out the index.html")
-        }
-    })
-}; 
-
-addManager()
-  .then(addEmployee)
-  .then(team => {
+addEmployee().then(team => {
     return createHTML(team);
-  })
-  .then(pageHTML => {
-    return writeFile(pageHTML);
+  }).then(html => {
+    return writeFile(html);
   })
   .catch(err => {
- console.log(err);
+    console.log(err);
   });
+
+
