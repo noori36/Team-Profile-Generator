@@ -36,7 +36,7 @@ SO THAT I have quick access to their emails and GitHub profiles
   <br><img src="./assets/images/htmlscreenshot.png" alt="screenshot of generated HTML" width="350"/>
 
   
-  - <a href="https://drive.google.com/file/d/1S5tw95BAcPKRh_DlWCocOfnN_0IfLKk6/view?usp=sharing"> Walkthrough Video</a>
+  - <a href="https://drive.google.com/file/d/1mbtovEOG2K2rbRH_XEJR_ME3MJ0T-g-o/view?usp=sharing"> Walkthrough Video</a>
     
   - <a href="./dist/index.html">Sample Generated HTML</a>
   -   [The URL of the GitHub Repository.](https://github.com/noori36/Team-Profile-Generator)
