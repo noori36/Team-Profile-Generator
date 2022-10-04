@@ -3,7 +3,7 @@ const writeFile = require('./src/writeFile');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern'); 
-const fs = require('fs'); 
+//const fs = require('fs'); 
 const inquirer = require('inquirer');
 
 
